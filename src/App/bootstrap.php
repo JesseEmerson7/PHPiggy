@@ -7,8 +7,9 @@ require __DIR__ . "/../../vendor/autoload.php";
 
 use Framework\App;
 use App\Controllers\{HomeController, AboutController};
+use App\Config\Paths;
 
-$app = new App();
+$app = new App(Paths::SOURCE . "app/container-definitions.php");
 
 //routes
 $app->get('/', [HomeController::class, 'home']);
